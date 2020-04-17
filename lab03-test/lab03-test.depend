@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1587128364 source:c:\users\kirill\desktop\Программирование\2-й сем\laba32\laba32\histogram.cpp
+	"histogram.h"
+
+1587128454 c:\users\kirill\desktop\Программирование\2-й сем\laba32\laba32\histogram.h
+	<vector>
+
+1587128004 source:c:\users\kirill\desktop\Программирование\2-й сем\laba32\laba32\test.cpp
+	<iostream>
+	"C:\Users\Kirill\Desktop\Программирование\2-й сем\laba32\laba32\histogram.h"
+	<cassert>
+
