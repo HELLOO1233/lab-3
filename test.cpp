@@ -1,5 +1,5 @@
 #include <iostream>
-#include "C:\Users\Kirill\Desktop\Программирование\2-й сем\laba32\laba32\histogram.h"
+#include "histogram.h"
 #include <cassert>
 
 void test_positive()

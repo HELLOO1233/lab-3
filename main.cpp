@@ -55,10 +55,12 @@ void svg_end()
 void input_BLOCK_WIDTH(size_t &BLOCK_WIDTH)
 {
     int flag=1;
+    cerr<<"Please, enter the width of one block of the histogram\n";
     while (flag==1)
     {
-        cerr<<"Please enter the width of one block of the histogram from 3 px to 30 px";
         cin>>BLOCK_WIDTH;
+        if (BLOCK_WIDTH<3 || BLOCK_WIDTH>30)
+            cerr<< "The block width of histogram cannot be less then 3 px or more then 30 px\n";
         if (BLOCK_WIDTH>=3 && BLOCK_WIDTH<=30)
             flag=0;
     }
@@ -72,9 +74,6 @@ void show_histogram_svg(const vector<size_t>& bins)
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
-    size_t BLOCK_WIDTH;
-    input_BLOCK_WIDTH(BLOCK_WIDTH);
-    size_t MAX_ASTERISK=350/BLOCK_WIDTH;
     unsigned max_count=0;
     for (size_t b : bins) /* мы присваиваем значение количества элементов */
     {
@@ -82,6 +81,9 @@ void show_histogram_svg(const vector<size_t>& bins)
             max_count=b; /* здесь мы ищем максимальное количество элементов в массиве*/
     }
     double top = 0;
+    size_t BLOCK_WIDTH;
+    input_BLOCK_WIDTH(BLOCK_WIDTH);
+    size_t MAX_ASTERISK=(IMAGE_WIDTH-TEXT_WIDTH)/BLOCK_WIDTH;
     for (size_t bin : bins)
     {
         size_t height=35;
